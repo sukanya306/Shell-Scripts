@@ -1,0 +1,9 @@
+echo "lsmem command"
+echo `lsmem`
+echo "lscpu command"
+echo `lscpu`
+echo "free command"
+echo `free`
+echo "vmstat command"
+echo `vmstat`
+

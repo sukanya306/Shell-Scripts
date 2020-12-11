@@ -1,0 +1,39 @@
+ch="y"
+while [ $ch == "y" ]
+do
+        echo "Enter your choice --"
+        echo "Enter '1' to add a record to employee file"
+        echo "Enter '2' to display the particular record"
+        echo "Enter '3' to delete a particular record"
+        echo "Enter '4' for exit"
+        read choice
+        case $choice in
+                1)read -p "Enter employee id: " id
+                  read -p  "Enter the name: " name
+                  read -p "enter the company name: " cname
+                  read -p "enter the designation: " desg
+                  read -p "Enter salary: " sal
+                  echo "$id $name $cname $desg $sal">>employee;;
+                2) echo "enter employee id: "
+                        read id
+                        grep -i "$id" employee;;
+                3) read -p "Enter Id: " id
+                        grep -v -w $id employee>>new
+                        cat new
+                        mv new employee
+                        echo "Record is deleted";;
+                4)exit;;
+                *) echo "invalid choice";;
+        esac
+        echo "Do you want to continue?"
+        read ch
+        if [ $ch != "y" ]
+        then
+                exit
+        fi
+done
+
+12345 Sukanya Microsoft CEO 1000000000
+12345 diva minf ceo 20000
+13245 fifa defe eeo 302000
+1335 diva mef vro 50000

@@ -1,0 +1,8 @@
+arr=('ps' 'du' 'df' 'dmesg')
+for i in "${arr[@]}"
+do
+	echo `$i`
+	echo ""
+	sleep 2
+done
+

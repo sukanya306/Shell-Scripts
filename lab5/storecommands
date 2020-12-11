@@ -1,0 +1,10 @@
+arr=('ps''du''df''dmesg')
+i=0
+while [ $i -lt ${#arr[*]} ]
+do
+	echo `${arr[$i}]
+	echo ""
+	sleep 3
+	i=`expr $i + 1`
+done
+

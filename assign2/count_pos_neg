@@ -1,0 +1,22 @@
+read -p "How many elements to be inserted: " n
+i=0
+echo "Enter the elements: "
+while [ $i -lt $n ]
+do
+	read arr[$i]
+	i=`expr $i + 1`
+done
+pos=0
+neg=0
+for j in ${arr[@]}
+do
+	if [ $j -gt 0 ]
+	then
+		pos=`expr $pos + 1`
+	else
+		neg=`expr $neg + 1`
+	fi
+done
+echo "The number of positive elements : $pos"
+echo "The number of negative elements : $neg"
+

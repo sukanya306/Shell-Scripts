@@ -1,0 +1,27 @@
+ch="y"
+while [ $ch == "y" ]
+do
+	
+	echo "1. hostnamectl"
+	echo "2. timedatectl"
+	echo "3. uname -a"
+	echo "4. sysctl -a"
+	echo "5. exit"
+	echo "Enter your choice: "
+	read i
+	case $i in
+		1) echo `hostnamectl`;;
+		2) echo `timedatectl`;;
+		3) echo `uname -a`;;
+		4) echo `sysctl -a`;;
+		5) exit;;
+		   *)echo "invalid choice";;
+	esac
+	echo "Want to continue? y/n: "
+	read ch
+	if [ $ch != "y" ]
+	then
+		exit
+	fi
+done
+
