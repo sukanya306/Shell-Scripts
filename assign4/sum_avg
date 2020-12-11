@@ -1,0 +1,28 @@
+read -p "How many numbers to be entered: " n
+echo  "Enter the elements:"
+i=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+i=0
+sum_all=0
+sum=0
+avg=0
+for i in ${arr[*]}
+do
+	if [[ $i -ne 0 ]] 
+	then
+		sum_all=`echo $sum_all + $i | bc -l`
+		if [[ `expr $i % 2` -ne 0 ]]
+		then
+		    sum=`echo $sum + $i | bc -l`
+		   
+		fi
+		i=`expr $i + 1`	
+	fi
+done
+avg=`echo $sum_all \/ $n | bc -l`
+echo "The sum of odd numbers: $sum"
+echo "The average value of all the elements: $avg"

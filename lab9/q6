@@ -1,0 +1,6 @@
+arr=("Pheobe" "Rachael" "Joey" "Chandler" "Monica" "Ross" )
+for el in "${arr[@]}"
+do
+	echo "$el"
+done | sort
+echo "I'll be there for you!!"

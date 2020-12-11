@@ -1,0 +1,15 @@
+read -p "Enter the how many elements in array: " n
+echo  "Enter the elements:"
+i=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+for j in ${arr[*]}
+do
+	if [[ $j -ne 0 ]]
+	then
+		echo "The non-zero number: $j"
+	fi
+done

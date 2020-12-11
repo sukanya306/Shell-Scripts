@@ -1,0 +1,6 @@
+
+arr=(`w` `last` `uptime` `history` `tty`)
+for i in ${arr[*]}
+do
+	echo $i
+done

@@ -1,0 +1,10 @@
+echo "Enter an array: "
+read -a arr
+echo -e "Enter positions for copying: "
+read -a p
+for i in ${p[*]}
+do
+	new_arr+=(${arr[$i]})
+done
+echo -e "\nCopied array: "
+echo "${new_arr[*]}"

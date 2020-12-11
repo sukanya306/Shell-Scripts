@@ -1,0 +1,31 @@
+read -p "Enter the how many elements in array: " n
+echo  "Enter the elements:"
+i=0
+while [ $i -lt $n ]
+do
+	read arr[$i]
+	i=`expr $i + 1`
+done
+i=0
+cnt=0
+for i in ${arr[*]}
+do
+	if [[ $i -ne 0 ]]
+	then
+		cnt=`expr $cnt + 1`
+	fi
+	i=`expr $i + 1`
+done
+echo "The number of elements : $cnt"
+number=$n
+count=0
+while [ $number -gt 0 ]
+do
+	count=$(( $number % 10 ))
+	number=$(( $number / 10 ))
+	if test $count -eq 0
+	then
+		ct=`expr ct + 1`
+	fi
+done
+echo "The number of 0's: $count"

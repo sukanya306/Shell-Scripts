@@ -1,0 +1,18 @@
+read -p "Enter the how many elements in array: " n
+echo  "Enter the elements as characters:"
+i=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+for((j=0;j<n;j++))
+do
+	temp=${arr[$j]}
+	if [ $temp == "a" -o $temp == "e" -o $temp == "i" -o $temp == "o" -o $temp == "u" ]
+	then
+		vowel=$temp
+	else
+		echo "The consonants: $temp"
+	fi
+done

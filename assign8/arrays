@@ -1,0 +1,24 @@
+echo -e "\e[31mEnter the first array: "
+read -a arr1
+echo -e "\e[31mEnter the second array: "
+read -a arr2
+echo -e "\e[31mEnter the third array: "
+read -a arr3
+el=(${arr1[@]} ${arr2[@]} ${arr3[@]})
+large=${arr1[0]}
+small=${arr1[0]}
+i=0
+for i in ${el[@]}
+do
+	if (( $(echo "$i > $large" | bc -l) ))
+	then
+		large=$i
+	fi
+	if (( $(echo "$i < $small" | bc -l) ))
+	then
+		small=$i
+	fi
+done
+echo -e "\e[33mThe largest element = $large"
+echo -e "\e[33mThe smallest element = $small"
+	

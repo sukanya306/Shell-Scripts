@@ -1,0 +1,17 @@
+read -p "Enter how many number of elements: " n
+echo "Enter the elements:"
+i=0
+while [ $i -lt $n ]
+do
+	read arr[$i]
+	i=`expr $i + 1`
+done
+read -p "Enter the number you want to delete: " d
+for j in ${arr[*]}
+do
+	if [[ $j -ne $d ]]
+	then
+		new_arr+=($j)
+	fi
+done
+echo "The new array with deleted number: ${new_arr[*]}" 

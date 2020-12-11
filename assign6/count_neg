@@ -1,0 +1,19 @@
+read -p "Enter the how many elements in array: " n
+echo  "Enter the elements:"
+i=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+cnt=0
+for j in ${arr[*]}
+do
+	if [[ $j -lt 0 ]]
+	then
+		cnt=`echo $cnt + 1 | bc -l`
+	
+	fi
+	
+done
+echo "The number of negative numbers: $cnt"

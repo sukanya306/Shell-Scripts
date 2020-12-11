@@ -1,0 +1,52 @@
+candidate_selection()
+{
+	echo "---------------------Candidate Selection-------------------------"
+	echo -e "\e[33mEnter the ID: "
+        read id
+        echo -e "\e[33mEnter the name of the candidate: "
+        read name
+        echo -e "\e[33mEnter the post applied for: "
+        read post
+        echo -e "\e[33mEnter the wriiten test mark: "
+        read m1
+        echo -e "\e[33mEnter the skill test mark: "
+        read m2
+        echo -e "\e[33mEnter the viva mark: "
+        read m3
+        echo -e "\e[33mEnter the carrier mark: "
+        read m4
+        avg=`echo $m1 + $m2 + $m3 + $m4 | bc -l`
+        if [[ $avg -gt 90 ]]
+        then
+                temp=1
+                echo -e "\e[36m Selected! All the best for Phase 2"
+		echo -e "\e[33m How many paper piblished? "
+        	read publish
+		if [[ $publish -gt 5 ]]
+	        then
+        	        echo -e "\e[36m Selected! All the best for phase 3"
+        	        echo -e "\e[33m What is your expected salary(lakh per annum)? "
+                	read sal
+                	if [[ $sal -lt 10 ]]
+                	then
+                        	 echo -e "\e[36m Congratulatios!! Selected"
+                	else
+                        	echo -e "\e[31m Sorry! Better luck next time"
+                	fi
+        	else
+                	echo -e "\e[31m Not selected Better luck next time!"
+        fi
+
+        else
+                temp=0
+                echo -e "\e[31m Not Selected! Better luck next time"
+        fi
+	
+	
+}
+while [ true ]
+do
+	candidate_selection
+done
+	
+	

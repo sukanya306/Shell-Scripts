@@ -1,0 +1,15 @@
+read -p "How many areas and parameters you need?: " n
+echo "Enter the sides of the $n squares:"
+i=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+for i in ${arr[@]}
+do
+	area=`expr ${arr[$i]} * ${arr[$i]} | bc -l`
+	perimeter=`expr 4 * ${arr[$i]} | bc -l`
+	echo "The area of the $i square: $area"
+	echo "The perimeter of the $i square is: $perimeter"
+done

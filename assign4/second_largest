@@ -1,0 +1,23 @@
+read -p "Enter the how many elements in array: " n
+echo  "Enter the elements:"
+i=0
+j=0
+while [ $i -lt $n ]
+do
+        read arr[$i]
+        i=`expr $i + 1`
+done
+for ((i=0;i<n;i++))
+ do 
+     for ((j=$i;j<n;j++))
+     do
+      if [ ${arr[$i]} -lt ${arr[$j]} ]
+      then
+                temp=${arr[$i]}
+                arr[$i]=${arr[$j]}
+                arr[$j]=$temp
+      fi
+   done
+ done
+ echo "Sorted Array: ${arr[@]}"
+ echo "The second largest element: ${arr[1]}"
